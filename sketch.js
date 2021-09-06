@@ -7,7 +7,7 @@ function setup() {
   strokeWeight(3)
   noFill()
   div = createP('');
-  div.style('font-size', '18px')
+  div.style('font-size', '16px')
   div.position(10, 0);
   myShape = new SuperShape(1, 1, 1, 4, 1, 1, 100)
   let gui = new dat.GUI()
@@ -39,8 +39,8 @@ class SuperShape {
     let p1 = abs(1 / this.a * cos(theta * this.m / 4)) ** this.n2
     let p2 = abs(1 / this.b * sin(theta * this.m / 4)) ** this.n3
     let ans = pow(p1 + p2, 1 / this.n1)
-    this.equation = "r = \\sqrt[" + this.n1.toPrecision(2) + "]{\\left\\lvert \\frac{1}{" + this.a + "} \\cos{\\left(\\frac{"+ this.m.toPrecision(2) + "}{4} \\theta\\right)}\\right\\rvert ^{" + this.n2.toPrecision(2) + "}" 
-    this.equation += "+ \\left\\lvert \\frac{1}{" + this.a + "} \\sin{\\left(\\frac{"+ this.m.toPrecision(2) + "}{4} \\theta\\right)}\\right\\rvert ^{" + this.n3.toPrecision(2) + "} }" 
+    this.equation = "r(\\theta) = \\left({\\left\\lvert \\frac{1}{" + this.a + "} \\cos{\\left(\\frac{"+ this.m.toPrecision(2) + "}{4} \\theta\\right)}\\right\\rvert ^{" + this.n2.toPrecision(2) + "}" 
+    this.equation += "+ \\left\\lvert \\frac{1}{" + this.a + "} \\sin{\\left(\\frac{"+ this.m.toPrecision(2) + "}{4} \\theta\\right)}\\right\\rvert ^{" + this.n3.toPrecision(2) + "}}\\right)^{-\\frac{1}{" + this.n1.toPrecision(2) + "}}" 
     if (ans === 0) {
       return 0
     }
@@ -57,7 +57,6 @@ class SuperShape {
       vertex(x, y)
     }
     endShape(CLOSE)
-    // div.html("$$\\frac{2}{r}$$")
     katex.render(this.equation, div.elt)
   }
 }
@@ -77,6 +76,4 @@ function keyPressed() {
     n1 += 1
   }
 }
-katex.render("c = \\pm\\sqrt{a^2 + b^2}", eqn, {
-  throwOnError: false
-});
+
