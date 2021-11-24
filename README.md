@@ -1,4 +1,4 @@
-# 2D SuperShapes in p5.js
+# 2D SuperShapes in p5.js with oscilloscope audio output
 
 Live demo 👉 [https://stalegjelsten.github.io/2d-supershapes/](https://stalegjelsten.github.io/2d-supershapes/) 👈
 
