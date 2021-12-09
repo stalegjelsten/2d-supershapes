@@ -78,7 +78,7 @@ class SuperShape {
     let p2 = abs(1 / this.b * sin(theta * this.m / 4)) ** this.n3
     let ans = pow(p1 + p2, 1 / this.n1)
     this.equation = "r = \\left({\\left\\lvert \\frac{\\cos{\\left(\\frac{" + this.m.toPrecision(2) + "}{4} \\theta\\right)}}{" + this.a + "} \\right\\rvert ^{" + this.n2.toPrecision(2) + "}"
-    this.equation += "+ \\left\\lvert \\frac{\\sin{\\left(\\frac{" + this.m.toPrecision(2) + "}{4} \\theta\\right)}}{" + this.a + "} \\right\\rvert ^{" + this.n3.toPrecision(2) + "}}\\right)^{-\\frac{1}{" + this.n1.toPrecision(2) + "}}"
+    this.equation += "+ \\left\\lvert \\frac{\\sin{\\left(\\frac{" + this.m.toPrecision(2) + "}{4} \\theta\\right)}}{" + this.b + "} \\right\\rvert ^{" + this.n3.toPrecision(2) + "}}\\right)^{-\\frac{1}{" + this.n1.toPrecision(2) + "}}"
     this.asciieq = "r(theta) = ( |(cos((" + this.m.toPrecision(2) + " theta) / 4)) / " + this.a.toPrecision(2) + "|^(" + this.n2.toPrecision(2) + ") + |(sin((" + this.m.toPrecision(2) + " theta) / 4)) / " + this.b.toPrecision(2) + " |^(" + this.n3.toPrecision(2) + "))^(-1/(" + this.n1.toPrecision(2) + ")"
 
     if (ans === 0) {
